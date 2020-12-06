@@ -1,0 +1,20 @@
+server:
+  port: ${SERVER_PORT:9999}
+spring:
+  main:
+    banner-mode: off
+  application:
+    name: bot
+  datasource:
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:123456}
+    url: jdbc:postgresql://www.51ops.xyz:5432/bot
+    driver-class-name: org.postgresql.Driver
+mybatis:
+  mapper-locations: classpath:mapper/**Mapper.xml
+  type-aliases-package: com.bot.entity
+  check-config-location: true
+  executor-type: reuse
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: true
